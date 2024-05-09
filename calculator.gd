@@ -3,7 +3,7 @@ extends Control
 const NAME_GROUP_BUTTON := "button"
 const NAME_GROUP_DISPLAY := "display"
 const NAME_SIGNAL_BUTTON_PRESSED := "pressed"
-const NAME_FUNC_BUTTON_PRESSED := "button_pressed"
+const NAME_FUNC_BUTTON_PRESSED := "_button_pressed"
 const NUMBER_ZERO := "0"
 
 var display: Label
@@ -19,11 +19,19 @@ func _add_digit(digit: String) -> void:
 	else:
 		list_number[id_current_number] = list_number[id_current_number] + digit
 
-func button_pressed(button_name: String) -> void:
+func _delete_digit() -> void:
+	list_number[id_current_number] = list_number[id_current_number].left(-1)
+	if(list_number[id_current_number].is_empty()):
+		list_number[id_current_number] = NUMBER_ZERO
+
+
+func _button_pressed(button_name: String) -> void:
 	match button_name:
 		"0", "1", "2", "3", "4", "5", "6", "7", "8", "9":
 			_add_digit(button_name)
-
+		"Backspace":
+			_delete_digit()
+			
 func _ready() -> void:
 	display = get_tree().get_first_node_in_group(NAME_GROUP_DISPLAY)
 	for button in get_tree().get_nodes_in_group(NAME_GROUP_BUTTON):
