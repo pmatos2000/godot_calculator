@@ -17,19 +17,19 @@ func _atualizar_numero(novo_numero: String, id: IdNumero) ->  void:
 	display.text = novo_numero
 
 func _add_digito(digito: String) -> void:
-	if(lista_numeros[id_numero_atual] == "0"):
+	if lista_numeros[id_numero_atual] == "0":
 		_atualizar_numero(digito, id_numero_atual)
 	else:
 		var novo_numero := lista_numeros[id_numero_atual] + digito
 		_atualizar_numero(novo_numero, id_numero_atual)
 
-func _apagar_digit() -> void:
+func _apagar_digito() -> void:
 	lista_numeros[id_numero_atual] = lista_numeros[id_numero_atual].left(-1)
-	if(lista_numeros[id_numero_atual].is_empty()):
+	if lista_numeros[id_numero_atual].is_empty():
 		lista_numeros[id_numero_atual] = "0"
 
 func _add_ponto() -> void:
-	if !lista_numeros[id_numero_atual].contains("."):
+	if not lista_numeros[id_numero_atual].contains("."):
 		var novo_numero = lista_numeros[id_numero_atual] + "."
 		_atualizar_numero(novo_numero, id_numero_atual)
 
@@ -38,7 +38,7 @@ func _botao_pressionado(botao_name: String) -> void:
 		"0", "1", "2", "3", "4", "5", "6", "7", "8", "9":
 			_add_digito(botao_name)
 		"Backspace":
-			_apagar_digit()
+			_apagar_digito()
 		"Ponto":
 			_add_ponto()
 
