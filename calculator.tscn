@@ -53,7 +53,7 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="Display" type="Label" parent="Background/MarginContainer/VBoxContainer/ColorRect/MarginContainer"]
+[node name="Display" type="Label" parent="Background/MarginContainer/VBoxContainer/ColorRect/MarginContainer" groups=["display"]]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "0"
