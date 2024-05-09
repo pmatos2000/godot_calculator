@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://0xw6hcfmca1x"]
+[gd_scene load_steps=2 format=3 uid="uid://0xw6hcfmca1x"]
+
+[ext_resource type="Script" path="res://calculator.gd" id="1_8dm0k"]
 
 [node name="Calculator" type="Control"]
 layout_mode = 3
@@ -7,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8dm0k")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -62,126 +65,126 @@ theme_override_constants/h_separation = 8
 theme_override_constants/v_separation = 8
 columns = 4
 
-[node name="CE" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer"]
+[node name="CE" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["button"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "CE"
 
-[node name="C" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer"]
+[node name="C" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["button"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "C"
 
-[node name="Inverso" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer"]
+[node name="Inverso" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["button"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "√"
 
-[node name="Button3" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer"]
+[node name="Backspace" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["button"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "0"
+text = "◄"
 
-[node name="7" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer"]
+[node name="7" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["button"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "7
 "
 
-[node name="8" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer"]
+[node name="8" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["button"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "8
 "
 
-[node name="9" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer"]
+[node name="9" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["button"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "9"
 
-[node name="Dividir" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer"]
+[node name="Dividir" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["button"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "÷"
 
-[node name="4" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer"]
+[node name="4" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["button"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "4
 "
 
-[node name="5" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer"]
+[node name="5" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["button"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "5"
 
-[node name="6" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer"]
+[node name="6" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["button"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "6"
 
-[node name="Multiplicar" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer"]
+[node name="Multiplicar" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["button"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "×"
 
-[node name="1" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer"]
+[node name="1" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["button"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "1"
 
-[node name="2" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer"]
+[node name="2" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["button"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "2"
 
-[node name="3" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer"]
+[node name="3" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["button"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "3"
 
-[node name="Subtrair" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer"]
+[node name="Subtrair" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["button"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "-
 "
 
-[node name="0" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer"]
+[node name="0" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["button"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "0"
 
-[node name="Ponto" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer"]
+[node name="Ponto" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["button"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "."
 
-[node name="Igual" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer"]
+[node name="Igual" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["button"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "=
 "
 
-[node name="Somar" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer"]
+[node name="Somar" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["button"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
