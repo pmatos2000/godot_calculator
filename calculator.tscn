@@ -65,126 +65,126 @@ theme_override_constants/h_separation = 8
 theme_override_constants/v_separation = 8
 columns = 4
 
-[node name="CE" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["button"]]
+[node name="CE" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["botão"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "CE"
 
-[node name="C" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["button"]]
+[node name="C" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["botão"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "C"
 
-[node name="Inverso" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["button"]]
+[node name="Inverso" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["botão"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "√"
 
-[node name="Backspace" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["button"]]
+[node name="Backspace" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["botão"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "◄"
 
-[node name="7" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["button"]]
+[node name="7" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["botão"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "7
 "
 
-[node name="8" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["button"]]
+[node name="8" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["botão"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "8
 "
 
-[node name="9" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["button"]]
+[node name="9" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["botão"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "9"
 
-[node name="Dividir" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["button"]]
+[node name="Dividir" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["botão"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "÷"
 
-[node name="4" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["button"]]
+[node name="4" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["botão"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "4
 "
 
-[node name="5" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["button"]]
+[node name="5" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["botão"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "5"
 
-[node name="6" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["button"]]
+[node name="6" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["botão"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "6"
 
-[node name="Multiplicar" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["button"]]
+[node name="Multiplicar" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["botão"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "×"
 
-[node name="1" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["button"]]
+[node name="1" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["botão"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "1"
 
-[node name="2" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["button"]]
+[node name="2" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["botão"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "2"
 
-[node name="3" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["button"]]
+[node name="3" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["botão"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "3"
 
-[node name="Subtrair" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["button"]]
+[node name="Subtrair" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["botão"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "-
 "
 
-[node name="0" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["button"]]
+[node name="0" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["botão"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "0"
 
-[node name="Ponto" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["button"]]
+[node name="Ponto" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["botão"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "."
 
-[node name="Igual" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["button"]]
+[node name="Igual" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["botão"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "=
 "
 
-[node name="Somar" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["button"]]
+[node name="Somar" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["botão"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3

@@ -1,47 +1,50 @@
 extends Control
 
-const NAME_GROUP_BUTTON := "button"
+const NAME_GROUP_botao := "botão"
 const NAME_GROUP_DISPLAY := "display"
-const NAME_SIGNAL_BUTTON_PRESSED := "pressed"
-const NAME_FUNC_BUTTON_PRESSED := "_button_pressed"
+const NOME_SINAL_BOTAO_PRESSIONADO := "pressed"
+const NAME_FUNC_BOTAO_PRESSIONADO := "_botao_pressionado"
 
 var display: Label
 
-enum IdNumber { First, Second}
-var id_current_number := IdNumber.First
+enum IdNumero { Primeiro, Segundo}
+var id_numero_atual := IdNumero.Primeiro
 
-var list_number: Array[String] = ["0", "0"]
+var lista_numeros: Array[String] = ["0", "0"]
 
-func _add_digit(digit: String) -> void:
-	if(list_number[id_current_number] == "0"):
-		list_number[id_current_number] = digit
+func _atualizar_numero(novo_numero: String, id: IdNumero) ->  void:
+	lista_numeros[id] = novo_numero
+	display.text = novo_numero
+
+func _add_digito(digito: String) -> void:
+	if(lista_numeros[id_numero_atual] == "0"):
+		_atualizar_numero(digito, id_numero_atual)
 	else:
-		list_number[id_current_number] = list_number[id_current_number] + digit
+		var novo_numero := lista_numeros[id_numero_atual] + digito
+		_atualizar_numero(novo_numero, id_numero_atual)
 
-func _delete_digit() -> void:
-	list_number[id_current_number] = list_number[id_current_number].left(-1)
-	if(list_number[id_current_number].is_empty()):
-		list_number[id_current_number] = "0"
+func _apagar_digit() -> void:
+	lista_numeros[id_numero_atual] = lista_numeros[id_numero_atual].left(-1)
+	if(lista_numeros[id_numero_atual].is_empty()):
+		lista_numeros[id_numero_atual] = "0"
 
-func _add_point() -> void:
-	if !list_number[id_current_number].contains("."):
-		list_number[id_current_number] = list_number[id_current_number] + "."
-		
+func _add_ponto() -> void:
+	if !lista_numeros[id_numero_atual].contains("."):
+		var novo_numero = lista_numeros[id_numero_atual] + "."
+		_atualizar_numero(novo_numero, id_numero_atual)
 
-func _button_pressed(button_name: String) -> void:
-	match button_name:
+func _botao_pressionado(botao_name: String) -> void:
+	match botao_name:
 		"0", "1", "2", "3", "4", "5", "6", "7", "8", "9":
-			_add_digit(button_name)
+			_add_digito(botao_name)
 		"Backspace":
-			_delete_digit()
+			_apagar_digit()
 		"Ponto":
-			_add_point()
+			_add_ponto()
 
 func _ready() -> void:
 	display = get_tree().get_first_node_in_group(NAME_GROUP_DISPLAY)
-	for button in get_tree().get_nodes_in_group(NAME_GROUP_BUTTON):
-		var callable := Callable(self, NAME_FUNC_BUTTON_PRESSED).bind(button.name)
-		button.connect(NAME_SIGNAL_BUTTON_PRESSED, callable)
+	for botao in get_tree().get_nodes_in_group(NAME_GROUP_botao):
+		var callable := Callable(self, NAME_FUNC_BOTAO_PRESSIONADO).bind(botao.name)
+		botao.connect(NOME_SINAL_BOTAO_PRESSIONADO, callable)
 
-func _process(delta) -> void:
-	display.text = list_number[id_current_number]
