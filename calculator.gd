@@ -1,13 +1,19 @@
 extends Control
 
-const NAME_GROUP_botao := "botão"
-const NAME_GROUP_DISPLAY := "display"
-const NOME_SINAL_BOTAO_PRESSIONADO := "pressed"
-const NOME_FUNC_BOTAO_PRESSIONADO := "_botao_pressionado"
+const _NAME_GROUP_BOTAO := "botão"
+const _NOME_GRUPO_DISPLAY := "display"
+const _NOME_SINAL_BOTAO_PRESSIONADO := "pressed"
+const _NOME_FUNC_BOTAO_PRESSIONADO := "_botao_pressionado"
+
+enum _IdNumero { Primeiro, Segundo}
+class _Resultado:
+	var valor := 0.0
+	var erro := false
+
 
 var _display: Label
 
-enum _IdNumero { Primeiro, Segundo}
+
 var _id_numero_atual := _IdNumero.Primeiro
 var _lista_numeros: Array[String] = ["0", "0"]
 var _operador_binario := ""
@@ -16,17 +22,17 @@ var _erro := false
 
 
 
-func _atualizar_numero(novo_numero: String, id: _IdNumero) ->  void:
-	_lista_numeros[id] = novo_numero
+func _atualizar_numero(novo_numero: String) ->  void:
+	_lista_numeros[_id_numero_atual] = novo_numero
 	_display.text = novo_numero
 
 func _add_digito(digito: String) -> void:
 	if _lista_numeros[_id_numero_atual] == "0" or _apagar_numero == true:
-		_atualizar_numero(digito, _id_numero_atual)
+		_atualizar_numero(digito)
 		_apagar_numero = false
 	else:
 		var novo_numero := _lista_numeros[_id_numero_atual] + digito
-		_atualizar_numero(novo_numero, _id_numero_atual)
+		_atualizar_numero(novo_numero)
 
 func _apagar_digito() -> void:
 	_lista_numeros[_id_numero_atual] = _lista_numeros[_id_numero_atual].left(-1)
@@ -36,11 +42,7 @@ func _apagar_digito() -> void:
 func _add_ponto() -> void:
 	if not _lista_numeros[_id_numero_atual].contains("."):
 		var novo_numero = _lista_numeros[_id_numero_atual] + "."
-		_atualizar_numero(novo_numero, _id_numero_atual)
-
-class _Resultado:
-	var valor := 0.0
-	var erro := false
+		_atualizar_numero(novo_numero)
 
 func _executar_operacao_binaria_salva() -> _Resultado:
 	var resultado := _Resultado.new();
@@ -73,7 +75,7 @@ func _executar_operador_binario(operador: String) -> void:
 			_apagar_numero = true
 			var str_resultado := str(resultado.valor)
 			_lista_numeros[0] = str_resultado
-			_atualizar_numero(str_resultado, _id_numero_atual)
+			_atualizar_numero(str_resultado)
 		else:
 			_exibir_erro()
 
@@ -85,7 +87,7 @@ func _executar_igualdade() -> void:
 			_apagar_numero = true
 			_id_numero_atual = _IdNumero.Primeiro
 			_lista_numeros[_IdNumero.Segundo] = "0"
-			_atualizar_numero(str(resultado.valor), _id_numero_atual)
+			_atualizar_numero(str(resultado.valor))
 		else:
 			_exibir_erro()
 
@@ -95,6 +97,14 @@ func _limpar() -> void:
 	_lista_numeros = ["0", "0"]
 	_operador_binario = ""
 	_display.text = "0"
+
+func _calcular_raiz_quadrada() -> void:
+	var numero = _lista_numeros[_id_numero_atual].to_float()
+	if numero >= 0:
+		_atualizar_numero(str(sqrt(numero)))
+	else:
+		_exibir_erro()
+
 
 func _botao_pressionado(botao_name: String) -> void:
 	if not _erro:
@@ -109,12 +119,17 @@ func _botao_pressionado(botao_name: String) -> void:
 				_executar_operador_binario(botao_name)
 			"Igual":
 				_executar_igualdade()
+			"CE":
+				_atualizar_numero("0")
+			"Raiz":
+				_calcular_raiz_quadrada()
+			
 	elif botao_name == 'C':
 		_limpar()
 
 
 func _ready() -> void:
-	_display = get_tree().get_first_node_in_group(NAME_GROUP_DISPLAY)
-	for botao in get_tree().get_nodes_in_group(NAME_GROUP_botao):
-		var callable := Callable(self, NOME_FUNC_BOTAO_PRESSIONADO).bind(botao.name)
-		botao.connect(NOME_SINAL_BOTAO_PRESSIONADO, callable)
+	_display = get_tree().get_first_node_in_group(_NOME_GRUPO_DISPLAY)
+	for botao in get_tree().get_nodes_in_group(_NAME_GROUP_BOTAO):
+		var callable := Callable(self, _NOME_FUNC_BOTAO_PRESSIONADO).bind(botao.name)
+		botao.connect(_NOME_SINAL_BOTAO_PRESSIONADO, callable)
