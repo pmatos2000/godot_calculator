@@ -116,6 +116,13 @@ func _calcular_quadrado() -> void:
 	var numero = _lista_numeros[_id_numero_atual].to_float()
 	_atualizar_numero(str(numero * numero))
 
+func _calcular_inverso() -> void:
+	var numero = _lista_numeros[_id_numero_atual].to_float()
+	if numero != 0:
+		_atualizar_numero(str(1/numero))
+	else:
+		_exibir_erro()
+
 func _botao_pressionado(botao_name: String) -> void:
 	if not _erro:
 		match botao_name:
@@ -136,7 +143,10 @@ func _botao_pressionado(botao_name: String) -> void:
 			"Log":
 				_calcular_log()
 			"Quadrado":
-				_calcular_quadrado()	
+				_calcular_quadrado()
+			"Inverso":
+				_calcular_inverso()
+			
 			
 	elif botao_name == 'C':
 		_limpar()
