@@ -105,6 +105,12 @@ func _calcular_raiz_quadrada() -> void:
 	else:
 		_exibir_erro()
 
+func _calcular_log() -> void:
+	var numero = _lista_numeros[_id_numero_atual].to_float()
+	if numero > 0:
+		_atualizar_numero(str(log(numero)/log(10)))
+	else:
+		_exibir_erro()
 
 func _botao_pressionado(botao_name: String) -> void:
 	if not _erro:
@@ -123,6 +129,8 @@ func _botao_pressionado(botao_name: String) -> void:
 				_atualizar_numero("0")
 			"Raiz":
 				_calcular_raiz_quadrada()
+			"Log":
+				_calcular_log()
 			
 	elif botao_name == 'C':
 		_limpar()
