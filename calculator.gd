@@ -5,22 +5,19 @@ const _NOME_GRUPO_DISPLAY := "display"
 const _NOME_SINAL_BOTAO_PRESSIONADO := "pressed"
 const _NOME_FUNC_BOTAO_PRESSIONADO := "_botao_pressionado"
 
-enum _IdNumero { Primeiro, Segundo}
+enum _IdNumero { Primeiro, Segundo }
+
 class _Resultado:
 	var valor := 0.0
 	var erro := false
 
-
 var _display: Label
-
 
 var _id_numero_atual := _IdNumero.Primeiro
 var _lista_numeros: Array[String] = ["0", "0"]
 var _operador_binario := ""
 var _apagar_numero := false
 var _erro := false
-
-
 
 func _atualizar_numero(novo_numero: String) ->  void:
 	_lista_numeros[_id_numero_atual] = novo_numero
@@ -123,6 +120,15 @@ func _calcular_inverso() -> void:
 	else:
 		_exibir_erro()
 
+func _trocar_sinal() -> void:
+	if not _lista_numeros[_id_numero_atual].contains("-"):
+		if _lista_numeros[_id_numero_atual] != "0":
+			var novo_numero = "-" + _lista_numeros[_id_numero_atual]
+			_atualizar_numero(novo_numero)
+	else:
+		var novo_numero = _lista_numeros[_id_numero_atual].replace("-", "");
+		_atualizar_numero(novo_numero)
+
 func _botao_pressionado(botao_name: String) -> void:
 	if not _erro:
 		match botao_name:
@@ -146,11 +152,10 @@ func _botao_pressionado(botao_name: String) -> void:
 				_calcular_quadrado()
 			"Inverso":
 				_calcular_inverso()
-			
-			
-	elif botao_name == 'C':
+			"Sinais":
+				_trocar_sinal()
+	if botao_name == 'C':
 		_limpar()
-
 
 func _ready() -> void:
 	_display = get_tree().get_first_node_in_group(_NOME_GRUPO_DISPLAY)
