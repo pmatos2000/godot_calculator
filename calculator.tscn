@@ -77,7 +77,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "C"
 
-[node name="Inverso" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["botão"]]
+[node name="Raiz" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["botão"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
