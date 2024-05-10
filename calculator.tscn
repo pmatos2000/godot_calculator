@@ -83,6 +83,31 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "√"
 
+[node name="Log" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["botão"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Log
+"
+
+[node name="Sinais" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["botão"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "+/-"
+
+[node name="Inverso" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["botão"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "1/n"
+
+[node name="Quadrado" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["botão"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "x²"
+
 [node name="Backspace" type="Button" parent="Background/MarginContainer/VBoxContainer/GridContainer" groups=["botão"]]
 layout_mode = 2
 size_flags_horizontal = 3
